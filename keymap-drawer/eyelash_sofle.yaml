@@ -26,7 +26,7 @@ layers:
   - I
   - O
   - P
-  - {t: \, s: '|'}
+  - {t: '-', s: _}
   - $$mdi:apple-keyboard-control$$
   - A
   - S
@@ -56,13 +56,13 @@ layers:
   - '&mkp MB2'
   - LEFT WIN
   - $$mdi:apple-keyboard-option$$
-  - INT MUHENKAN
+  - Ctl+$$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-space$$', h: '2'}
   - layer1
   - $$mdi:mouse-left-click-outline$$
   - layer1
   - $$mdi:keyboard-space$$
-  - INT HENKAN
+  - Ctl+$$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
   layer1:
@@ -100,7 +100,7 @@ layers:
   - '&mkp MB5'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - PG DN
-  - {t: '-', s: _}
+  - \
   - {t: '=', s: +}
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
