@@ -45,6 +45,45 @@
     };
 
     behaviors {
+        usb_windows: usb_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "USB Windows";
+            wait-ms = <20>;
+            bindings = <&out OUT_USB &to 0>;
+        };
+
+        bluetooth_windows_1: bluetooth_windows_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Bluetooth Windows 1";
+            wait-ms = <20>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0 &to 0>;
+        };
+
+        bluetooth_windows_2: bluetooth_windows_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Bluetooth Windows 2";
+            wait-ms = <20>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1 &to 0>;
+        };
+
+        bluetooth_mac: bluetooth_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Bluetooth Mac";
+            wait-ms = <20>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2 &to 3>;
+        };
+
+        bluetooth_android: bluetooth_android {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Bluetooth Android";
+            wait-ms = <20>;
+            bindings = <&out OUT_BLE &bt BT_SEL 3 &to 0>;
+        };
     };
 
     keymap {
@@ -59,7 +98,7 @@
 &mkp MB2   &kp LEFT_WIN  &kp LEFT_ALT  &kp LC(SPACE)  &lt 2 SPACE  &mo 1     &mkp LCLK        &mo 1   &kp SPACE  &kp LC(SPACE)  &kp RIGHT_SHIFT  &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
+            sensor-bindings = <&scroll_encoder>;
             display-name = "LAYER0";
         };
 
@@ -78,8 +117,8 @@
 
         layer_2 {
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
+&kp TILDE  &usb_windows  &bluetooth_windows_1 &bluetooth_windows_2 &bluetooth_mac &bluetooth_android &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
+&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &bt BT_SEL 4 &kp PLUS
 &trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
 &trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
@@ -92,10 +131,12 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_GUI  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT_CONTROL  &kp LEFT_ALT  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
