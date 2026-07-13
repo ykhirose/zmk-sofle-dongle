@@ -132,11 +132,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   '2':
   - '~'
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
+  - '&usb_windows'
+  - '&bluetooth_windows_1'
+  - '&bluetooth_windows_2'
+  - '&bluetooth_mac'
+  - '&bluetooth_android'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - F6
   - F7
@@ -155,7 +155,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - F11
   - F12
-  - _
+  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
   - +
   - {t: '$$mdi:transfer$$', type: trans}
   - OUT USB
@@ -222,6 +222,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -248,9 +249,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
